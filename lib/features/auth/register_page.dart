@@ -94,7 +94,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              MyTextField(
+              MyTextField( 
                 hintText: "Choose a Username or Email",
                 height: 56,
                 width: 380,

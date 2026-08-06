@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:safeyatra/features/auth/login_page.dart';
+import 'package:safeyatra/features/home/home_page.dart';
+import 'package:safeyatra/features/notifications/notification.dart';
+// import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,22 +16,24 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    getUsername();
+    // getUsername();
   }
 
-  Future<void> getUsername() async {
-    final name = await loadTokenSub();
+  // Future<void> getUsername() async {
+  //   final username = "Ryan";
+    // final name = await loadTokenSub();
 
-    if (name != null) {
-      setState(() {
-        username = name.length > 15 ? "${name.substring(0, 15)}..." : name;
-      });
-    }
-  }
-  void setTheme(int idx) async {
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setInt("theme", idx);
-  }
+
+  //   if (name != null) {
+  //     setState(() {
+  //       username = name.length > 15 ? "${name.substring(0, 15)}..." : name;
+  //     });
+  //   }
+  // }
+  // void setTheme(int idx) async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   prefs.setInt("theme", idx);
+  // }
 
   void navigateBottonBar(int index) {
     setState(() {
@@ -40,18 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     
     final List<Widget> pages = [
-      HomePage(navigate:navigateBottonBar),
-      CategoryPage(),
-      Center(child:Text("in progress")),
-      CartPage(),
-      ProfilePage(),
+      HomePage(),
+      Center(child:Text("settings")),
+      Center(child:Text("translate page")),
+      Center(child:Text("profile")),
     ];
 
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.person),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+          },
         ),
         title: Text(username), 
         actions: [
@@ -59,15 +65,16 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context) => LoginScreen()),
+                MaterialPageRoute(builder: (context) => NotificationPage()),
               );
             },
-            icon: Icon(Icons.shopping_cart_outlined),
-          ),
-          IconButton(
-            onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationPage())),
             icon: Icon(Icons.notifications_outlined),
           ),
+          // IconButton(
+          //   // onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationPage())),
+          //   onPressed: ()=>{},
+          //   icon: Icon(Icons.notifications_outlined),
+          // ),
         ],
       ),
       body: IndexedStack(
@@ -83,22 +90,19 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.home_outlined),
             label: "Home",
           ),
+          
           BottomNavigationBarItem(
-            icon: Icon(Icons.category_outlined),
-            label: "Categories",
+            icon: Icon(Icons.translate_outlined),
+            label: "Translator",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.list_outlined),
-            label: "Orders",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: "Cart",
+            icon: Icon(Icons.settings_outlined),
+            label: "Settings",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
             label: "Profile",
-          ),
+          )
         ],
       ),
     );

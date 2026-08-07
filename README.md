@@ -84,7 +84,7 @@ The Flutter app stays a lightweight client — it sends the user's GPS-resolved 
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/safeyatra.git
+git clone https://github.com/Ramaprasadnayak/safeyatra.git
 cd safeyatra
 
 # Install dependencies

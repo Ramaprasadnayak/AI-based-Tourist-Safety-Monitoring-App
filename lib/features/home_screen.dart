@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:safeyatra/features/auth/login_page.dart';
 import 'package:safeyatra/features/home/home_page.dart';
 import 'package:safeyatra/features/notifications/notification.dart';
+import 'package:safeyatra/features/translate/translate_page.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     
     final List<Widget> pages = [
       HomePage(),
-      Center(child:Text("settings")),
+      TranslatePage(),
       Center(child:Text("translate page")),
       Center(child:Text("profile")),
     ];
@@ -90,7 +91,6 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.home_outlined),
             label: "Home",
           ),
-          
           BottomNavigationBarItem(
             icon: Icon(Icons.translate_outlined),
             label: "Translator",

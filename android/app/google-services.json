@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "223997531000",
+    "project_id": "projectsafeyatra",
+    "storage_bucket": "projectsafeyatra.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223997531000:android:c2cad9f3a830ca9961ae8d",
+        "android_client_info": {
+          "package_name": "com.example.safeyatra"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMmQJoedGmblP0B4vW4gjgDlpJJNvKHpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

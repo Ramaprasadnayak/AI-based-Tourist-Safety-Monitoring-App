@@ -36,16 +36,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         );
       }
-      else if (phno.text.trim().length != 10) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text("phone number must be in 10 numbers"),
-            duration: Duration(seconds: 2),
-          ),
-        );
-      }
+      // else if (phno.text.trim().length != 10) {
+      //   ScaffoldMessenger.of(context).showSnackBar(
+      //     const SnackBar(
+      //       content: Text("phone number must be in 10 numbers"),
+      //       duration: Duration(seconds: 2),
+      //     ),
+      //   );
+      // }
       else{
-        register(context,usrname,phno,password);
+        register(usrname.text.trim(),password.text.trim(),context);
       }
     }
     return Scaffold(
@@ -61,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Ramprasad ",
+                text: "Safe ",
                 style: GoogleFonts.poppins(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
@@ -69,7 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
               TextSpan(
-                text: "Nayak",
+                text: "Yatra",
                 style: GoogleFonts.poppins(
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
@@ -104,16 +104,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 hideText: false,
               ),
               const SizedBox(height: 20),
-              MyTextField(
-                hintText: "Phone Number",
-                height: 56,
-                width: 380,
-                prefixicon: Icons.phone_outlined,
-                controller: phno,
-                eyebutton: false,
-                hideText: false,
-              ),
-              const SizedBox(height: 20),
+              // MyTextField(
+              //   hintText: "Phone Number",
+              //   height: 56,
+              //   width: 380,
+              //   prefixicon: Icons.phone_outlined,
+              //   controller: phno,
+              //   eyebutton: false,
+              //   hideText: false,
+              // ),
+              // const SizedBox(height: 20),
               MyTextField(
                 hintText: "Create Strong Password",
                 height: 56,

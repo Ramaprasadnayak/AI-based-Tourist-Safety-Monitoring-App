@@ -14,13 +14,13 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController usrname = TextEditingController();
+  TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     void validateInput(){
-      if (usrname.text.isEmpty || password.text.isEmpty) {
+      if (email.text.isEmpty || password.text.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text("Textfield cant be empty"),
@@ -28,15 +28,22 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         );
       }
-      else if (usrname.text.trim().length < 6 || password.text.trim().length < 6) {
+      else if (email.text.trim().length < 6 || password.text.trim().length < 6) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text("Must contain at least 6 characters"),
           ),
         );
       }
+      else if (!email.text.trim().endsWith("@gmail.com")) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Invalid email"),
+          ),
+        );
+      }
       else{
-        login(context, usrname, password);
+        login(email.text.trim(), password.text.trim(),context);
       }
     }
     return Scaffold(
@@ -90,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 56,
                   width: 380,
                   prefixicon: Icons.person_outline,
-                  controller: usrname,
+                  controller: email,
                   eyebutton: false, 
                   hideText: false,
                 ),

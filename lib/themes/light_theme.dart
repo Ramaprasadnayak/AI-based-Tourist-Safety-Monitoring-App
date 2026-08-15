@@ -1,53 +1,93 @@
-// light_theme.dart
 import 'package:flutter/material.dart';
 import 'package:safeyatra/themes/app_colors.dart';
 
 ThemeData lightTheme = ThemeData(
+  brightness: Brightness.light,
+
+  // Background
   scaffoldBackgroundColor: AppColors.lightBackground,
-  appBarTheme: AppBarTheme(backgroundColor: AppColors.lightBackground2,foregroundColor: AppColors.lightText,),
+
+  // AppBar
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.lightBackground2,
+    foregroundColor: AppColors.lightText,
+  ),
+
+  // Card
   cardTheme: CardThemeData(
-    color: Colors.white,
+    color: AppColors.lightBackground2,
     elevation: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12),
     ),
   ),
-  iconTheme: IconThemeData(
-    color: Color(0xFF2563EB)
+
+  // Icons
+  iconTheme: const IconThemeData(
+    color: AppColors.primary,
   ),
+
+  // Outlined Button
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: WidgetStatePropertyAll(Color(0xFF2563EB)),
-      side:WidgetStatePropertyAll(
-      BorderSide(
-        color: Color(0xFF2563EB),
-        width: 2,
-      )
+      foregroundColor: const WidgetStatePropertyAll(
+        AppColors.primary,
+      ),
+      side: const WidgetStatePropertyAll(
+        BorderSide(
+          color: AppColors.primary,
+          width: 2,
+        ),
       ),
     ),
   ),
-  inputDecorationTheme:InputDecorationTheme(
+
+  // TextField / Input
+  inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: Colors.white,
-    hintStyle: TextStyle(
-      color: Color.fromARGB(255, 48, 48, 48),
+    fillColor: AppColors.lightInputBackground,
+
+    hintStyle: const TextStyle(
+      color: AppColors.lightHintText,
     ),
-    enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.grey.shade300, width: 1),
+
+    enabledBorder: const OutlineInputBorder(
+      borderSide: BorderSide(
+        color: AppColors.lightInputBorder,
+        width: 1,
+      ),
     ),
-    focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.grey.shade300, width: 1),
+
+    focusedBorder: const OutlineInputBorder(
+      borderSide: BorderSide(
+        color: AppColors.primary,
+        width: 1,
+      ),
     ),
-    prefixIconColor: Color.fromARGB(255, 48, 48, 48),
-    suffixIconColor: Color(0xFF6B7A99) ,
+
+    prefixIconColor: AppColors.lightHintText,
+    suffixIconColor: AppColors.lightSecondaryIcon,
   ),
-  textTheme: TextTheme(
-    bodyMedium: TextStyle(color: AppColors.lightText),
+
+  // Text
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(
+      color: AppColors.lightText,
+    ),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+
+  // Bottom Navigation
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.lightBackground2,
-    selectedIconTheme: IconThemeData(color: Colors.blue),
-    unselectedItemColor:AppColors.lightText,
-    unselectedIconTheme:IconThemeData(color: AppColors.lightText)
-  )
-); 
+
+    selectedIconTheme: IconThemeData(
+      color: AppColors.primary,
+    ),
+
+    unselectedIconTheme: IconThemeData(
+      color: AppColors.lightText,
+    ),
+
+    unselectedItemColor: AppColors.lightText,
+  ),
+);

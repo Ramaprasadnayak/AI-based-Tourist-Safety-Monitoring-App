@@ -19,95 +19,85 @@ class _TranslatePageState extends State<TranslatePage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              DropdownMenuExample(),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle
+              MyDropdownMenu(),
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
                   child: Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Icon(Icons.swap_horiz,color: Colors.black87,),
-                ))
+                    padding: const EdgeInsets.all(5.0),
+                    child: Icon(Icons.swap_horiz, color: Colors.black87),
+                  ),
+                ),
               ),
-              DropdownMenuExample()
+              MyDropdownMenu(),
             ],
           ),
           SizedBox(height: 40),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: BoxBorder.all(
-                color: Colors.grey
-              )
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row (  
-                    children: [
-                      Text("Speak in the selected language")
-                    ],
-                  ),
+                  Row(children: [Text("Speak in the selected language")]),
                   SizedBox(height: 40),
                   Container(
                     decoration: BoxDecoration(
-                      boxShadow:[
-                        BoxShadow(color: Colors.lightBlue),
-                        BoxShadow(color: Colors.blue),
-                        BoxShadow(color: Colors.blueAccent),
-                        BoxShadow(color: Colors.blueAccent),
-
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.lightBlue.withValues(),
+                          blurRadius: 15,
+                          spreadRadius: 3,
+                        ),
                       ],
-                      shape: BoxShape.circle
                     ),
-                    child: Center(
-                      child: IconButton(
-                        onPressed: ()=>{}, 
-                        icon: Icon(Icons.mic,color: Colors.white,)
-                      ),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.mic, color: Colors.white),
                     ),
                   ),
                   SizedBox(height: 40),
-                  Text("Tap the mic and start speaking")
-                ]
+                  Text("Tap the mic and start speaking"),
+                ],
               ),
             ),
           ),
           SizedBox(height: 20),
-          Icon(Icons.arrow_downward,color: Colors.grey),
+          Icon(Icons.arrow_downward, color: Colors.grey),
           SizedBox(height: 20),
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: BoxBorder.all(
-                color: Colors.grey
-              )
+          Card(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
             ),
             child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row (  
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text("Translation"),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.copy,color: Colors.grey))
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.copy, color: Colors.grey),
+                      ),
                     ],
                   ),
                   SizedBox(height: 40),
                   Text("data"),
                   SizedBox(height: 40),
-                ]
+                ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

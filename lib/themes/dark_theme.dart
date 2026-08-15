@@ -1,12 +1,19 @@
-// dark_theme.dart
 import 'package:flutter/material.dart';
 import 'package:safeyatra/themes/app_colors.dart';
 
-
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
+
+  // Background
   scaffoldBackgroundColor: AppColors.darkBackground1,
-  appBarTheme: AppBarTheme(backgroundColor: AppColors.darkBackground1,foregroundColor: AppColors.darkText),
+
+  // AppBar
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.darkBackground1,
+    foregroundColor: AppColors.darkText,
+  ),
+
+  // Card
   cardTheme: CardThemeData(
     color: AppColors.darkBackground2,
     elevation: 0,
@@ -14,42 +21,73 @@ ThemeData darkTheme = ThemeData(
       borderRadius: BorderRadius.circular(12),
     ),
   ),
-  iconTheme: IconThemeData(
-    color: Colors.blueAccent
+
+  // Icons
+  iconTheme: const IconThemeData(
+    color: AppColors.primaryLight,
   ),
+
+  // Outlined Button
   outlinedButtonTheme: OutlinedButtonThemeData(
     style: ButtonStyle(
-      foregroundColor: WidgetStatePropertyAll(Colors.blue),
-      side:WidgetStatePropertyAll(
-      BorderSide(
-        color: Colors.blue,
-        width: 2,
-      )
+      foregroundColor: const WidgetStatePropertyAll(
+        AppColors.primaryLight,
+      ),
+      side: const WidgetStatePropertyAll(
+        BorderSide(
+          color: AppColors.primaryLight,
+          width: 2,
+        ),
       ),
     ),
   ),
-  inputDecorationTheme:InputDecorationTheme(
+
+  // TextField / Input
+  inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: AppColors.darkBackground2,
-    hintStyle: TextStyle(
-      color:  Colors.white60,
+    fillColor: AppColors.darkInputBackground,
+
+    hintStyle: const TextStyle(
+      color: AppColors.darkHintText,
     ),
-    enabledBorder: OutlineInputBorder(
-      borderSide: BorderSide(color:AppColors.darkBackground1, width: 1),
+
+    enabledBorder: const OutlineInputBorder(
+      borderSide: BorderSide(
+        color: AppColors.darkInputBorder,
+        width: 1,
+      ),
     ),
-    focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: AppColors.darkBackground1, width: 1),
+
+    focusedBorder: const OutlineInputBorder(
+      borderSide: BorderSide(
+        color: AppColors.primaryLight,
+        width: 1,
+      ),
     ),
-    prefixIconColor: Colors.white60,
-    suffixIconColor: Colors.white60 ,
+
+    prefixIconColor: AppColors.darkHintText,
+    suffixIconColor: AppColors.darkSecondaryIcon,
   ),
-  textTheme: TextTheme(
-    bodyMedium: TextStyle(color: AppColors.darkText),
+
+  // Text
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(
+      color: AppColors.darkText,
+    ),
   ),
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(
+
+  // Bottom Navigation
+  bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.darkBackground1,
-    selectedIconTheme: IconThemeData(color: Colors.purple),
-    unselectedItemColor:AppColors.darkText,
-    unselectedIconTheme:IconThemeData(color: AppColors.darkText)
+
+    selectedIconTheme: IconThemeData(
+      color: AppColors.primaryLight,
+    ),
+
+    unselectedIconTheme: IconThemeData(
+      color: AppColors.darkText,
+    ),
+
+    unselectedItemColor: AppColors.darkText,
   ),
 );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:safeyatra/features/auth/login_page.dart';
 import 'package:safeyatra/features/home/home_page.dart';
 import 'package:safeyatra/features/notifications/notification.dart';
+import 'package:safeyatra/features/profile/profile_page.dart';
 import 'package:safeyatra/features/translate/translate_page.dart';
 // import 'package:shared_preferences/shared_preferences.dart';
 
@@ -48,8 +49,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final List<Widget> pages = [
       HomePage(),
       TranslatePage(),
-      Center(child:Text("translate page")),
-      Center(child:Text("profile")),
+      Center(child:Text("settings")),
+      ProfilePage(),
     ];
 
     return Scaffold(

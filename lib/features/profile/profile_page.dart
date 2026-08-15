@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:maruthimedical/services/get_detail.dart';
-import 'package:maruthimedical/widgets/card.dart';
+import 'package:safeyatra/widgets/profile_card.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -18,7 +18,8 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   Future<void> getUsername() async {
-    final name = await loadTokenSub();
+    // final name = await loadTokenSub();
+    String name="ram";
 
     if (name != null) {
       setState(() {
@@ -57,17 +58,17 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Icon(Icons.person, size: 60, color: Colors.grey.shade700),
             ),
             SizedBox(height: 15),
-            OutlinedButton(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context, 
-                  builder: (context){
-                    return ProfilePic();
-                  },
-                );
-              }, 
-              child: const Text("Edit Profile")
-            ),
+            // OutlinedButton(
+            //   onPressed: () {
+            //     showModalBottomSheet(
+            //       context: context, 
+            //       builder: (context){
+            //         return ProfilePic();
+            //       },
+            //     );
+            //   }, 
+            //   child: const Text("Edit Profile")
+            // ),
             SizedBox(height: 20),
             Column(
               children: profileOptions.entries.map((entry) {

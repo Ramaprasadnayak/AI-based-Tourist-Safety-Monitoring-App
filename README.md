@@ -12,16 +12,16 @@ SafeYatra addresses this gap with an integrated system that uses **district-leve
 
 ## Key Features
 
-- 📍 **Real-Time GPS Tracking** — continuous location monitoring with live updates.
-- 🛡️ **AI-Based Risk Classification** — districts are classified as **Safe / Moderate / High Risk** using a Random Forest model trained on aggregated NCRB (National Crime Records Bureau) crime statistics.
-- 🔥 **Safety Heatmap** — Kernel Density Estimation (KDE) over crime rates visualizes risk intensity across regions (Green / Yellow / Red).
-- 🚧 **Geofencing & Restricted Zone Alerts** — automatic warnings when a tourist enters unsafe, restricted, or hazardous zones (military areas, flood-prone zones, construction sites, etc.).
-- 🧠 **Anomaly Detection** — an LSTM model flags abnormal movement patterns for early risk detection.
-- 🆘 **Emergency Alert System** — one-tap SOS captures GPS location, timestamp, and emergency type, then notifies emergency contacts via Firebase Cloud Messaging with an SMS gateway fallback for low-connectivity areas.
-- 📝 **Incident Reporting** — tourists can report theft, harassment, scams, medical emergencies, or accidents with GPS coordinates, description, and photos; reports are admin-verified.
-- 🌐 **Real-Time Language Translation** — text and voice translation between English, Hindi, and regional languages (Kannada, Tamil, Telugu, Malayalam, Marathi, Bengali, and more), with Text-to-Speech support.
-- 🧭 **Adaptive Safety Recommendations** — personalized route and destination suggestions based on location, behavior, weather, and crime data, favoring patrolled and well-lit areas.
-- 📊 **Authority Dashboard** — live tourist map, heatmaps, and incident visualization for monitoring and faster emergency response.
+-  **Real-Time GPS Tracking** — continuous location monitoring with live updates.
+-  **AI-Based Risk Classification** — districts are classified as **Safe / Moderate / High Risk** using a Random Forest model trained on aggregated NCRB (National Crime Records Bureau) crime statistics.
+-  **Safety Heatmap** — Kernel Density Estimation (KDE) over crime rates visualizes risk intensity across regions (Green / Yellow / Red).
+-  **Geofencing & Restricted Zone Alerts** — automatic warnings when a tourist enters unsafe, restricted, or hazardous zones (military areas, flood-prone zones, construction sites, etc.).
+-  **Anomaly Detection** — an LSTM model flags abnormal movement patterns for early risk detection.
+-  **Emergency Alert System** — one-tap SOS captures GPS location, timestamp, and emergency type, then notifies emergency contacts via Firebase Cloud Messaging with an SMS gateway fallback for low-connectivity areas.
+-  **Incident Reporting** — tourists can report theft, harassment, scams, medical emergencies, or accidents with GPS coordinates, description, and photos; reports are admin-verified.
+-  **Real-Time Language Translation** — text and voice translation between English, Hindi, and regional languages (Kannada, Tamil, Telugu, Malayalam, Marathi, Bengali, and more), with Text-to-Speech support.
+-  **Adaptive Safety Recommendations** — personalized route and destination suggestions based on location, behavior, weather, and crime data, favoring patrolled and well-lit areas.
+-  **Authority Dashboard** — live tourist map, heatmaps, and incident visualization for monitoring and faster emergency response.
 
 ## How It Works
 

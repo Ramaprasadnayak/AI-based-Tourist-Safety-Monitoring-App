@@ -12,7 +12,27 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: AppColors.lightBackground2,
     foregroundColor: AppColors.lightText,
   ),
-
+  dropdownMenuTheme: DropdownMenuThemeData(
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.lightBackground2,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide.none,
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide.none,
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(12),
+        borderSide: BorderSide(color: AppColors.darkSecondaryIcon, width: 1),
+      ),
+    ),
+    menuStyle: MenuStyle(
+      backgroundColor: WidgetStatePropertyAll(AppColors.white),
+    ),
+  ),
   // Card
   cardTheme: CardThemeData(
     color: AppColors.lightBackground2,

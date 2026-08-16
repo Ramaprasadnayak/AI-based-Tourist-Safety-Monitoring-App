@@ -20,13 +20,6 @@ class _MyDropdownMenuState extends State<MyDropdownMenu> {
   Widget build(BuildContext context) {
     return DropdownMenu<String>(
       initialSelection: languages.first,
-      menuStyle: MenuStyle(
-        backgroundColor: WidgetStatePropertyAll(Colors.white),
-      ),
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: Colors.white,
-      ),
       onSelected: (String? value) {
         setState(() {
           dropdownValue = value!;

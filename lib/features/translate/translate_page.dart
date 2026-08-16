@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:safeyatra/features/translate/speak_translate.dart';
+import 'package:safeyatra/features/translate/text_translate.dart';
 import 'package:safeyatra/widgets/drop_down_button.dart';
 
 class TranslatePage extends StatefulWidget {
@@ -9,6 +11,8 @@ class TranslatePage extends StatefulWidget {
 }
 
 class _TranslatePageState extends State<TranslatePage> {
+  bool toggle = true;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,41 +38,16 @@ class _TranslatePageState extends State<TranslatePage> {
               MyDropdownMenu(),
             ],
           ),
-          SizedBox(height: 40),
-          Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(children: [Text("Speak in the selected language")]),
-                  SizedBox(height: 40),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.lightBlue.withValues(),
-                          blurRadius: 15,
-                          spreadRadius: 3,
-                        ),
-                      ],
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(Icons.mic, color: Colors.white),
-                    ),
-                  ),
-                  SizedBox(height: 40),
-                  Text("Tap the mic and start speaking"),
-                ],
-              ),
-            ),
+          SizedBox(height: 5),
+          SwitchListTile(
+            value: toggle,
+            onChanged: (bool value) {
+              setState(() {
+                toggle = value;
+              });
+            },
           ),
+          if (toggle) SpeakTranslate() else TextTranslate(),
           SizedBox(height: 20),
           Icon(Icons.arrow_downward, color: Colors.grey),
           SizedBox(height: 20),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:safeyatra/features/auth/login_page.dart';
+// import 'package:safeyatra/features/auth/login_page.dart';
 import 'package:safeyatra/features/home/home_page.dart';
 import 'package:safeyatra/features/notifications/notification.dart';
 import 'package:safeyatra/features/profile/profile_page.dart';
 import 'package:safeyatra/features/translate/translate_page.dart';
-// import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,24 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // getUsername();
   }
-
-  // Future<void> getUsername() async {
-  //   final username = "Ryan";
-    // final name = await loadTokenSub();
-
-
-  //   if (name != null) {
-  //     setState(() {
-  //       username = name.length > 15 ? "${name.substring(0, 15)}..." : name;
-  //     });
-  //   }
-  // }
-  // void setTheme(int idx) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   prefs.setInt("theme", idx);
-  // }
 
   void navigateBottonBar(int index) {
     setState(() {
@@ -45,38 +27,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    
     final List<Widget> pages = [
       HomePage(),
+      Center(child: Text("safe maps")),
+      Center(child: Text("sos")),
       TranslatePage(),
-      Center(child:Text("settings")),
       ProfilePage(),
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: Image.asset("assets/logo/icon.png",height: 120), 
+        title: Image.asset("assets/logo/icon.png", height: 120),
         actions: [
           IconButton(
             onPressed: () {
               Navigator.push(
-                context, 
+                context,
                 MaterialPageRoute(builder: (context) => NotificationPage()),
               );
             },
             icon: Icon(Icons.notifications_outlined),
           ),
-          // IconButton(
-          //   // onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>NotificationPage())),
-          //   onPressed: ()=>{},
-          //   icon: Icon(Icons.notifications_outlined),
-          // ),
         ],
       ),
-      body: IndexedStack(
-        index: selectedIndex,
-        children: pages,
-      ),
+      body: IndexedStack(index: selectedIndex, children: pages),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
@@ -84,24 +58,49 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
+            icon: Icon(Icons.map_outlined),
+            activeIcon: Icon(Icons.map),
             label: "Safety Map",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: "SOS",
+            icon: Container(
+              width: 65,
+              height: 65,
+              decoration: const BoxDecoration(
+                color: Colors.red,
+                shape: BoxShape.circle,
+              ),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.call, color: Colors.white, size: 25),
+                  Text(
+                    "SOS",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            label: "",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.translate_outlined),
+            activeIcon: Icon(Icons.translate),
             label: "Translate",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
             label: "Profile",
-          )
+          ),
         ],
       ),
     );

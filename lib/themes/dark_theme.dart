@@ -73,18 +73,24 @@ ThemeData darkTheme = ThemeData(
   ),
 
   // Text
-  textTheme: const TextTheme(bodyMedium: TextStyle(color: AppColors.darkThemeText)),
+  textTheme: const TextTheme(
+    bodyMedium: TextStyle(color: AppColors.darkThemeText),
+  ),
 
   // Bottom Navigation
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: AppColors.darkNavbar,
 
     selectedIconTheme: IconThemeData(color: AppColors.navbarIcon),
-    
-    selectedLabelStyle: TextStyle(color: AppColors.navbarLabel),
-    
+
+    selectedItemColor: AppColors.navbarIcon,
+
+    selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600),
+
+    unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w400),
+
     unselectedIconTheme: IconThemeData(color: AppColors.darkThemeText),
-    
+
     unselectedItemColor: AppColors.darkThemeText,
   ),
 );

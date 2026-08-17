@@ -17,9 +17,9 @@ class AppColors {
   // =========================
 
   static const lightBackground = Color(0xFFF5F7FB);
-  static const lightBackground2 = Colors.white;
-  static const lightText = Color(0xFF1E293B);
-
+  static const lightCardBackground = Colors.white;
+  
+  static const lightThemeText = Color(0xFF1E293B);
   static const lightHintText = Color(0xFF303030);
   static const lightSecondaryIcon = Color(0xFF6B7A99);
 
@@ -30,13 +30,18 @@ class AppColors {
   // DARK THEME
   // =========================
 
-  static const darkBackground1 = Color(0xFF151A22);
-  static const darkBackground2 = Color(0xFF292C33);
-  static const darkText = Colors.white;
+  static const darkBackground = Color(0xFF060D1E);
+  static const darkCardBackground = Color(0xFF0A1C36);
+  
+  static const darkNavbar =Color(0xFF0B111E);
+  static const navbarIcon=Color(0xFF1A73E8);
+  static const navbarLabel=Color(0xFF182236);
 
+
+  static const darkThemeText = Colors.white;
   static const darkHintText = Colors.white60;
+  
   static const darkSecondaryIcon = Colors.white60;
-
   static const darkInputBackground = Color(0xFF292C33);
   static const darkInputBorder = Color(0xFF151A22);
 }

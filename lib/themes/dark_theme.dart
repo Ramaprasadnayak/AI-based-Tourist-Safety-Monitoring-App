@@ -5,17 +5,17 @@ ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
 
   // Background
-  scaffoldBackgroundColor: AppColors.darkBackground1,
+  scaffoldBackgroundColor: AppColors.darkBackground,
 
   // AppBar
   appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.darkBackground1,
-    foregroundColor: AppColors.darkText,
+    backgroundColor: AppColors.darkBackground,
+    foregroundColor: AppColors.darkThemeText,
   ),
   dropdownMenuTheme: DropdownMenuThemeData(
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.darkBackground2,
+      fillColor: AppColors.darkCardBackground,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
@@ -26,16 +26,16 @@ ThemeData darkTheme = ThemeData(
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: AppColors.darkText, width: 1),
+        borderSide: BorderSide(color: AppColors.darkThemeText, width: 1),
       ),
     ),
     menuStyle: MenuStyle(
-      backgroundColor: WidgetStatePropertyAll(AppColors.darkBackground2),
+      backgroundColor: WidgetStatePropertyAll(AppColors.darkCardBackground),
     ),
   ),
   // Card
   cardTheme: CardThemeData(
-    color: AppColors.darkBackground2,
+    color: AppColors.darkCardBackground,
     elevation: 0,
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
   ),
@@ -73,16 +73,18 @@ ThemeData darkTheme = ThemeData(
   ),
 
   // Text
-  textTheme: const TextTheme(bodyMedium: TextStyle(color: AppColors.darkText)),
+  textTheme: const TextTheme(bodyMedium: TextStyle(color: AppColors.darkThemeText)),
 
   // Bottom Navigation
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.darkBackground1,
+    backgroundColor: AppColors.darkNavbar,
 
-    selectedIconTheme: IconThemeData(color: AppColors.primaryLight),
-
-    unselectedIconTheme: IconThemeData(color: AppColors.darkText),
-
-    unselectedItemColor: AppColors.darkText,
+    selectedIconTheme: IconThemeData(color: AppColors.navbarIcon),
+    
+    selectedLabelStyle: TextStyle(color: AppColors.navbarLabel),
+    
+    unselectedIconTheme: IconThemeData(color: AppColors.darkThemeText),
+    
+    unselectedItemColor: AppColors.darkThemeText,
   ),
 );

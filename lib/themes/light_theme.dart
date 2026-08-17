@@ -9,13 +9,13 @@ ThemeData lightTheme = ThemeData(
 
   // AppBar
   appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.lightBackground2,
-    foregroundColor: AppColors.lightText,
+    backgroundColor: AppColors.lightCardBackground,
+    foregroundColor: AppColors.lightThemeText,
   ),
   dropdownMenuTheme: DropdownMenuThemeData(
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.lightBackground2,
+      fillColor: AppColors.lightCardBackground,
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
@@ -35,7 +35,7 @@ ThemeData lightTheme = ThemeData(
   ),
   // Card
   cardTheme: CardThemeData(
-    color: AppColors.lightBackground2,
+    color: AppColors.lightCardBackground,
     elevation: 0,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12),
@@ -92,22 +92,22 @@ ThemeData lightTheme = ThemeData(
   // Text
   textTheme: const TextTheme(
     bodyMedium: TextStyle(
-      color: AppColors.lightText,
+      color: AppColors.lightThemeText,
     ),
   ),
 
   // Bottom Navigation
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.lightBackground2,
+    backgroundColor: AppColors.lightCardBackground,
 
     selectedIconTheme: IconThemeData(
       color: AppColors.primary,
     ),
 
     unselectedIconTheme: IconThemeData(
-      color: AppColors.lightText,
+      color: AppColors.lightThemeText,
     ),
 
-    unselectedItemColor: AppColors.lightText,
+    unselectedItemColor: AppColors.lightThemeText,
   ),
 );

@@ -15,7 +15,10 @@ class MyApp extends StatelessWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeProvider.themeMode,
-      home:HomeScreen(),
+      home:Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: HomeScreen(),
+      ),
     );
   }
 }

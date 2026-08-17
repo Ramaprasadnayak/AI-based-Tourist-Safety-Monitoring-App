@@ -55,13 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.person),
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
-          },
-        ),
-        title: Text(username), 
+        title: Image.asset("assets/logo/icon.png",height: 120), 
         actions: [
           IconButton(
             onPressed: () {
@@ -93,12 +87,16 @@ class _HomeScreenState extends State<HomeScreen> {
             label: "Home",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.translate_outlined),
-            label: "Translator",
+            icon: Icon(Icons.settings_outlined),
+            label: "Safety Map",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings_outlined),
-            label: "Settings",
+            icon: Icon(Icons.person_outline),
+            label: "SOS",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.translate_outlined),
+            label: "Translate",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),

@@ -50,8 +50,8 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             SizedBox(height: 20),
-            Column(children: [Text("hello, $username")]),
-            SizedBox(height: 20),
+            // Column(children: [Text("hello, $username")]),
+            // SizedBox(height: 20),
             CircleAvatar(
               radius: 55,
               backgroundColor: Colors.grey.shade300,

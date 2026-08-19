@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safeyatra/widgets/buttons.dart';
+import 'package:safeyatra/widgets/graph.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -132,18 +133,64 @@ class _HomePageState extends State<HomePage> {
                     height: 40,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF102242),
+                        backgroundColor: const Color(0xFF102242),
+                        padding: EdgeInsets.zero,
                       ),
-                      onPressed: (){}, 
-                      child: Text("Update Location",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.blueAccent))
-                    )
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(
+                            Icons.my_location,
+                            size: 12,
+                            color: Colors.blueAccent,
+                          ),
+                          const SizedBox(width: 5),
+                          const Text(
+                            "Update Location",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blueAccent,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SizedBox(height: 20),
+          // ai safety scores
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Card(
+                        shape: const CircleBorder(),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Icon(Icons.auto_awesome_outlined),
+                        ),
+                      ),
+                      Text("AI Safety Score")
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      RiskGauge(riskScore: 78)
+                    ],
                   )
                 ],
               ),
             ),
           ),
-          // ai safety scores
-          Card(),
           //
           Card(),
           Row(),

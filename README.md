@@ -1,4 +1,4 @@
-# SafeYatra 🧭
+# SafeYatra 
 
 **AI-Based Smart Tourist Safety Monitoring and Tracking System**
 

@@ -12,7 +12,7 @@ class RiskGauge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 250,
+      height: 230,
       child: SfRadialGauge(
         axes: [
           RadialAxis(

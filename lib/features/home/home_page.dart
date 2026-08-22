@@ -28,14 +28,14 @@ class _HomePageState extends State<HomePage> {
             Greetings(
               username:usrname
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             // current locations
             UserLocation(
               city:usrcity,
               district:usrdistrict,
               state:usrstate
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             // ai safety scores
             SafetyScore(
               score:usrscore

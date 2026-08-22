@@ -15,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   String usrstate="Karnataka";
   String usrcity="Karamangala";
   String usrdistrict="Bengaluru urban";
+  double usrscore=78;
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -36,7 +37,9 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 20),
             // ai safety scores
-            SafetyScore(),
+            SafetyScore(
+              score:usrscore
+            ),
             //
             Card(),
             Row(),

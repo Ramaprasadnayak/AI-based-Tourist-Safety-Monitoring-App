@@ -22,18 +22,18 @@ class RiskGauge extends StatelessWidget {
             ranges: [
               GaugeRange(
                 startValue: 0,
-                endValue: 40,
-                color: Colors.green,
+                endValue: 49,
+                color: Colors.red,
               ),
               GaugeRange(
-                startValue: 40,
-                endValue: 70,
+                startValue: 50,
+                endValue: 79,
                 color: Colors.orange,
               ),
               GaugeRange(
-                startValue: 70,
+                startValue: 80,
                 endValue: 100,
-                color: Colors.red,
+                color: Colors.green,
               ),
             ],
 

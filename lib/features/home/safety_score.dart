@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:safeyatra/widgets/graph.dart';
 
 class SafetyScore extends StatefulWidget {
-  const SafetyScore({super.key});
+  final double score;
+  const SafetyScore({
+    super.key,
+    required this.score
+  });
 
   @override
   State<SafetyScore> createState() => _SafetyScoreState();
@@ -28,7 +32,13 @@ class _SafetyScoreState extends State<SafetyScore> {
                 Text("AI Safety Score"),
               ],
             ),
-            Row(children: [RiskGauge(riskScore: 78)]),
+            Row(children: [RiskGauge(riskScore: widget.score)]),
+            if(widget.score<50)
+            Text("Unsafe")
+            else if(widget.score<80)
+            Text("Moderate")
+            else
+            Text("Safe")
           ],
         ),
       ),
